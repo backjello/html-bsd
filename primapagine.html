@@ -1,50 +1,198 @@
 <html>
-    <head>
-        <title>PRIMA PAGINA</title>
-    </head>
-    <body>
-        <h1>Ciao sono un titolo</h1>
-        <h2>Io sono il sottotitolo</h2>
-        <button>AVVIA PROCESSO</button>
 
-        <p>Io invece sono un normale paragrafo</p>
-        <p>io sono un altro paragrafo</p>
+<head>
+    <title>PRIMA PAGINA</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
 
-        <span>Io sono una span</span>
-        <span>Io sono un'altra span e non andiamo a capo</span>
+        /* Selettore per classe */
+        .grande {
+            font-size: 30px;
+        }
 
-        <p>Si evidenzia che è <span style="color: red;">importantissimo</span> rimanere seduti nella fase di decollo</p>
+        /* Selettore per id */
+        #testo-verde,
+        h1 {
+            color: green;
+        }
+
+        /* selettore che prende un paragrafo con la classe 'grande' */
+        p.grande {
+            font-weight: bold;
+        }
+
+        /* Elemento contenuto all'interno di un elemento */
+        p b {
+            background-color: yellow;
+        }
+
+        .largo p {
+            text-decoration: line-through;
+        }
+
+        .largo {
+            width: 100vw;
+            height: 100vh;
+            background-color: red;
+        }
+
+        .margin {
+            margin: 10px;
+            width: 500px;
+            aspect-ratio: 1;
+            padding: 20px;
+            background-color: red;
+        }
+
+        .padding {
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+        }
+
+        .ultimo-elemento {
+            width: 100%;
+            height: 100%;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="margin">
+        <div class="padding">
+            <div class="ultimo-elemento"></div>
+        </div>
+    </div>
+    <h1>Ciao sono un titolo</h1>
+    <h2>Io sono il sottotitolo</h2>
+    <button>AVVIA PROCESSO</button>
+    <b>Bold a caso</b>
+
+    <p class="grande">Io invece sono un grande paragrafo</p>
+    <p>io sono un altro paragrafo</p>
+
+    <span class="grande">Io sono una span grande</span>
+    <span class="grande" id="testo-verde">Io sono un'altra span e non andiamo a capo</span>
+
+    <p>Si evidenzia che è <span style="color: red;">importantissimo</span> rimanere seduti nella fase di decollo</p>
+
+    <p>
+        Del testo poco importante, ma questa parte è <b>Importante</b>
+        <strong>Importante</strong>, questo invece è un testo che va
+        <u>Sottolineato</u>. Questa frase è stata scritta da <i>Mario rossi</i>
+    </p>
+
+    <div class="largo">
+        <p>
+            Del testo
+        </p>
+    </div>
+
+    <hr>
+
+    <ol>
+        <li>Mercedes</li>
+        <li>Ferrari</li>
+        <li>Redbull</li>
+        <li>ALTRO </li>
+    </ol>
 
 
-        <ol>
-            <li>Mercedes</li>
-            <li>Ferrari</li>
-            <li>Redbull</li>
-            <li>ALTRO </li>
-        </ol>        
-        
-
-        <table style="border: 1px solid black;">
-            <tr>
-                <td style="border: 1px solid black;">NOME</td>
-                <td style="border: 1px solid black;">COGNOME</td>
-                <td style="border: 1px solid black;">TELEFONO</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid black;">Leonardosfwedfereffefe</td>
-                <td style="border: 1px solid black;">Di Caprio</td>
-                <td style="border: 1px solid black;">45624567889</td>
-            </tr>
-        </table>
-        
+    <table>
+        <tr>
+            <th>NOME</th>
+            <th>COGNOME</th>
+            <th>TELEFONO</th>
+        </tr>
+        <tr>
+            <td>Leonardosfwedfereffefe</td>
+            <td>Di Caprio</td>
+            <td>45624567889</td>
+        </tr>
+    </table>
 
 
+
+    <br>
+    <a href="https://it.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart">Clicca qui</a>
+    <br>
+    <img src="pinguino.jpg" alt="immagine di un pinguino">
+
+    <form>
+        <label for="nome">
+            Nome:
+        </label>
+        <input id="nome" type="text" placeholder="Nome..."><br>
+        <!-- input disabilitato -->
+        <input type="text" disabled value="non puoi modificarmi"><br>
+        <label for="eta">
+            Età
+        </label>
+        <input type="number" id="eta">
+        <label for="email">
+            Email
+        </label>
+        <input type="email" id="email" placeholder="Inserisci al tua email"><br>
+        <label for="password">
+            Password
+        </label>
+        <input type="password" id="password"><br>
+        <label for="data">Data di nascita</label>
+        <input type="date" id="data"><br>
+
+        <label for="privacy">
+            Accetto i termini della <a href="https://google.com">Privacy</a>
+        </label>
+        <input type="checkbox" name="privacy" required><br>
+
+        <label for="newsletter">
+            Voglio iscrivermi alla newsletter
+        </label>
+        <input type="checkbox" name="newsletter"><br>
+
+        <label for="m">M</label>
+        <input id="m" type="radio" name="sesso">
+        <label for="f">F</label>
+        <input id="f" type="radio" name="sesso">
         <br>
-        <a href="https://it.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart">Clicca qui</a>
+
+        <label for="immagine">Immagine profilo</label>
+        <input id="immagine" type="file"><br>
+
+        <label for="gradimento">Gradimento</label>
+        <input id="gradimento" type="range" min="0" max="10"><br>
+
+        <select>
+            <option>Opzione 1</option>
+            <option>Opzione 2</option>
+            <option>Opzione 3</option>
+        </select>
         <br>
-        <img src="pinguino.jpg">
+
+        <input type="submit" value="Conferma">
+
+    </form>
+
+    <details>
+        <summary>Premi qui per maggiori dettagli</summary>
+        <p>
+            Questi sono maggiori dettagli.
+            Questi sono maggiori dettagli.
+            Questi sono maggiori dettagli.
+            Questi sono maggiori dettagli.
+            Questi sono maggiori dettagli.
+            Questi sono maggiori dettagli.
+            Questi sono maggiori dettagli.
+        </p>
+    </details>
 
 
-       
-    </body>
+</body>
+
 </html>
