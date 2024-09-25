@@ -1,0 +1,76 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    background-color: grey;
+    /* spazio solo a sinistra e destra */
+    padding-inline: 20%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+img{
+    width: 150px;
+}
+
+a{
+    color: black;
+    /* Togliamo la sottolineatura */
+    text-decoration: none;
+    padding-inline: 10px;
+}
+
+a img{
+    width: 30px;
+}
+
+.motto{
+    font-size: 25px;
+}
+
+.main{
+    /* imposto immagine di sfondo */
+    background-image: url("https://ilfotografo.it/wp-content/uploads/2021/11/paesaggio_in_bn_manarola_2738757086-scaled.jpg");
+    /* impedisco all'immagine di ripetersi*/
+    background-repeat: no-repeat;
+    /* Centro l'immagine */
+    background-position: center center;
+    /* Copro tutto lo spazio disponibile */
+    background-size: cover;
+    height: 80vh;
+    padding-inline: 20%;
+}
+
+h1{
+    color: yellow;
+}
+h3{
+    color: orange;
+}
+.welcome, .welcome a{
+    color: white;
+}
+
+.welcome{
+    /* Sfondo nero semi-trasparente */
+    background-color: rgba(0, 0, 0, 0.725);
+    padding: 5%;
+    /* Bordo stondato solo sugli angoli in fondo*/
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.text-red{
+    /* Specifico che questa regola si deve 
+    applicare con una priorità maggiore */
+    color: red !important;
+}
+.text-grey{
+    color: rgb(180, 180, 180) !important;
+}
+
+.welcome a{
+    padding-inline: 0;
+}
