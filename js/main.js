@@ -147,6 +147,8 @@ console.log("la data di nascita della persona è ", persona.dataDiNascita) // un
 
 persona['eta'] = 40 // equivalente a persona.eta = 40
 
+persona['data-di-nascita']
+
 const persone = [
     {
         nome: 'luigi',
@@ -178,4 +180,104 @@ function saluta() {
     console.log("hello");
 }
 
+function salutaConNome(nome) {
+    console.log("ciao ", nome)
+}
 
+// saluto mario
+salutaConNome("mario")
+salutaConNome("luigi")
+
+function sommaDueNumeri(num1, num2) {
+    const risultato = num1 + num2
+    console.log("il risultato è ", risultato);
+}
+
+const num1 = 1
+sommaDueNumeri(num1, 2)
+
+function moltiplicazione(num1, num2) {
+    const risultato = num1 * num2;
+    return risultato // il return interrompe l'esecuzione di una funzione
+    console.log("questo codice non è raggiungibile");
+}
+
+const prodotto2 = moltiplicazione(5, 3)
+console.log("il prodotto è ", prodotto2);
+
+// prendo l'elemento che ha come id "titolo"
+// uso le regole dei selettori css
+const divTitolo = document.querySelector("#titolo")
+
+divTitolo.innerHTML = "Titolo di prova"
+// posso modificare tutte le proprietà dello stile del div
+divTitolo.style.color = "rgb(158, 39, 39)"
+// viene sovrascritto quello precedentemente contenuto nell'innerHTML
+divTitolo.innerHTML = "Titolo di <b>PROVA</b>"
+// aggiungo un sottotitolo senza sovrasrivere quello precedente
+divTitolo.innerHTML = divTitolo.innerHTML + "<br> sottotitolo"
+
+console.log(divTitolo);
+
+let contatore = 0;
+
+function aggiungi1() {
+    contatore++; // equivalente a contatore = contatore + 1
+    console.log(contatore);
+}
+
+const posts = [
+    {
+        titolo: "nuovo prodotto in offerta",
+        descrizione: "prova il nuovissimo prodotto della nostra azienda",
+        oraPubblicazione: 10,
+        numeroLike: 30,
+        img: "https://www.economyup.it/wp-content/uploads/2024/09/nutella-1024x699.jpeg.webp"
+    },
+    {
+        titolo: "highlights partita di ieri sera",
+        descrizione: "guarda gli highlights della partita di ieri sera tra milan e inter",
+        oraPubblicazione: 1,
+        numeroLike: 500,
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0UBTUF0_uTC9-BRGzAO9lC6no6XTLhDwgXQ&s"
+    }
+]
+// <div id="posts-container"></div>
+const postsContaier = document.querySelector("#posts-container")
+
+for (let i = 0; i < posts.length; i++) {
+    const post = posts[i]
+    postsContaier.innerHTML = postsContaier.innerHTML +
+        `<h2>Titolo del post: ${post.titolo}</h2>
+        <img src="${post.img}">
+        <div>
+            ${post.descrizione}
+        </div>
+        <span class="numero-di-like">
+            Piace a: ${post.numeroLike} persone.
+        </span>
+        <button onclick="like(${i})">
+            ❤️
+        </button>
+        <i>
+            Pubblicato ${calcolaOre(post.oraPubblicazione)}
+            ore fa
+        </i>
+    ` // inserisco il backtick con ALT+96 (su windows).
+}
+// indice dell'array
+function like(i) {
+    posts[i].numeroLike++
+    console.log(posts);
+    const testiLikes = document.querySelectorAll(".numero-di-like")
+    testiLikes[i].innerHTML = `
+     Piace a: ${posts[i].numeroLike} persone.
+    `
+}
+
+function calcolaOre(ora) {
+    const date = new Date() // creo un oggetto Date con l'ora e la data attuale
+    date.setHours(12) // setto le ore come se fossero sempre le 12 (mezzogiorno)
+    const oraAttule = date.getHours() // mi dice che ore sono (solo ora)
+    return oraAttule - ora
+}

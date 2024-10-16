@@ -4,7 +4,7 @@ body{
 }
 
 .header{
-    background-color: grey;
+    background-color: rgb(158, 39, 39);
     /* spazio solo a sinistra e destra */
     padding-inline: 20%;
     padding-top: 10px;
