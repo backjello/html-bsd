@@ -180,6 +180,8 @@ function saluta() {
     console.log("hello");
 }
 
+// 16/10/24
+
 function salutaConNome(nome) {
     console.log("ciao ", nome)
 }
@@ -228,7 +230,7 @@ function aggiungi1() {
 
 const posts = [
     {
-        titolo: "nuovo prodotto in offerta",
+        "titolo": "nuovo prodotto in offerta",
         descrizione: "prova il nuovissimo prodotto della nostra azienda",
         oraPubblicazione: 10,
         numeroLike: 30,
@@ -277,7 +279,7 @@ function like(i) {
 
 function calcolaOre(ora) {
     const date = new Date() // creo un oggetto Date con l'ora e la data attuale
-    date.setHours(12) // setto le ore come se fossero sempre le 12 (mezzogiorno)
+    // date.setHours(12) // setto le ore come se fossero sempre le 12 (mezzogiorno)
     const oraAttule = date.getHours() // mi dice che ore sono (solo ora)
     return oraAttule - ora
 }
