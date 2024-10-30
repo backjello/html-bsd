@@ -40,3 +40,8 @@ async function getSinglePost(id) {
 }
 
 getSinglePost(10)
+
+async function deletePost(id) {
+    const result = await axios.delete('https://dummyjson.com/posts/' + id)
+    console.log(result);
+}
