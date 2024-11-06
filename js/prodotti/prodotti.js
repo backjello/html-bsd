@@ -1,12 +1,3 @@
-async function getProdotti() {
-    const token = localStorage.getItem('TOKEN')
-    const result = await axios.get('https://dummyjson.com/products', {
-        headers: {
-            'Authorization': 'Bearer ' + token
-        }
-    })
-    return result.data
-}
 
 async function main() {
     const data = await getProdotti()
@@ -18,7 +9,7 @@ async function main() {
                     <img src="${prod.images[0]}" style="width:200px">
                 </td>
                 <td>
-                    <a href="/js/singolo-prodotto?id=${prod.id}">
+                    <a href="/js/singolo-prodotto/?id=${prod.id}">
                     ${prod.title}
                     </a>
                     </td>
@@ -35,7 +26,7 @@ async function main() {
                     <button onclick="modificaProdotto(${prod.id})">
                         Modifica
                     </button>
-                    <button onclick="eliminaProdotto(${prod.id})">
+                    <button onclick="eliminaProdotto(${prod.id},'${prod.title}')">
                         Elimina
                     </button>
                 </td>
@@ -43,5 +34,6 @@ async function main() {
         `
     }
 }
+
 
 main()
